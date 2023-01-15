@@ -1,0 +1,7 @@
+body{
+    background: rgb(63,98,251);
+    background: radial-gradient(circle, rgba(63,98,251,1) 12%, rgba(238,70,252,1) 100%);
+}
+.heading{
+    text-align: center;
+}
