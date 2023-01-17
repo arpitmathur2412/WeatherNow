@@ -16,8 +16,8 @@ app.post("/",(req,res)=>{
     var cityname=req.body.city;
     const url="https://api.openweathermap.org/data/2.5/weather?q="+cityname+"&appid=f2b678c26e448ab2a8db6de582b29d9f&units=metric"
     https.get(url,function(response){
-    console.log(response.statusMessage);
     
+    if(response.statusCode==200){
     response.on("data",(data)=>{    
         const weatherdata=JSON.parse(data);
         const temperature=weatherdata.main.temp;
@@ -30,9 +30,12 @@ app.post("/",(req,res)=>{
         res.write("<img src="+url+">");
         res.send(); 
     });
+}
+else {console.log("cannot search");
+        res.send("<h1> Please enter a valid city!!</h1>");
+}
 });
 });
-
 
 app.listen(3000,()=>{
     console.log("server started at port 3000");
