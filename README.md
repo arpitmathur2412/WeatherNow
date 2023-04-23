@@ -1,2 +1,2 @@
 # Weather_App
-Can be used to find the weather of any city in the world
+A Node.js application that shows dynamic weather to user of any city in the world using OpenWeatherAPI
